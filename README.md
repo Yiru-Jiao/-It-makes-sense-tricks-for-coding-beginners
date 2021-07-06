@@ -20,7 +20,7 @@ __A.__ Change the data type to `bool` will save the memory significantly
 
 ````python
 numpy.zeros((25000, 700, 700), dtype=bool)
-# the memory size now is around 12.25 GB -- still large but at least accessable
+# the memory size now is around 12.25 GB -- still large but at least accessible
 ````
 
 ## 3. How to save a large boolean array (where the True values are sparse) with numpy?

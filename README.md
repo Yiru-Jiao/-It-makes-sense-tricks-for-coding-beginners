@@ -23,10 +23,10 @@ numpy.zeros((25000, 700, 700), dtype=bool)
 # the memory size now is around 12.25 GB -- still large but at least accessable
 ````
 
-## 3. How to save a large array of 0/False and 1/True with numpy (where the True values are sparse)?
+## 3. How to save a large array of 0/False and 1/True (where the True values are sparse) with numpy?
 __Q.__ I have a large array of true values (the one created in question 2 and processed further), for example, of size 25000\*700\*700, which cannot be reshaped into 2d and saved as a csv file because the required memory size is soooo large and the the required time is sooooo long.
 
-__A.__ Save the indices of True values (it only occupies 120 bytes in my case!)
+__A.__ Save the indices of the True values (the csv file of indices occupies only 4.8 MBs in my case!)
 
 ````python
 indices = np.argwhere(true_or_false_array)

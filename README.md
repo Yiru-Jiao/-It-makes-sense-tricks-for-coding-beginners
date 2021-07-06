@@ -13,11 +13,13 @@ __A.__ Use `exec()` which executes strings as executable code
 
 ## 2. How to create an array to record a huge amount of true values (True/1 and False/0)?
 __Q.__ I need to create an array of size 25000\*700\*700 to record true values; `np.zeros((25000, 700, 700))` is warned with the memory error of `Unable to allocate 91.3 GiB for an array with shape (25000, 700, 700) and data type float64`.
+
 __A.__ Change the data type to bool will save the memory significantly
-    
+
+````python
     np.zeros((25000, 700, 700), dtype=bool)
     # the memory size now is around 12.25 GB -- still large but at least accessable
-
+````
 
 ## 3. How to save a large array of 0/False and 1/True with numpy (where the True values are sparse)?
 __Q.__ I have a large array of true values (the one created in question 2 and processed further), for example, of size 25000\*700\*700, which cannot be reshaped into 2d and saved as a csv file because the required memory size is soooo large and the the required time is sooooo long.

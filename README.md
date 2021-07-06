@@ -13,8 +13,8 @@ for i in range(1,6):
     exec('a_'+str(i)+'=[]')
 ````
 
-## 2. How to create an array to record a huge amount of true values (True/1 and False/0)?
-__Q.__ I need to create an array of size 25000\*700\*700 to record true values; `np.zeros((25000, 700, 700))` is warned with the memory error of `Unable to allocate 91.3 GiB for an array with shape (25000, 700, 700) and data type float64`.
+## 2. How to create an array to record a huge amount of boolean values (True/1 and False/0)?
+__Q.__ I need to create an array of size 25000\*700\*700 to record boolean values; and `np.zeros((25000, 700, 700))` is warned with the memory error of `Unable to allocate 91.3 GiB for an array with shape (25000, 700, 700) and data type float64`.
 
 __A.__ Change the data type to `bool` will save the memory significantly
 
@@ -23,8 +23,8 @@ numpy.zeros((25000, 700, 700), dtype=bool)
 # the memory size now is around 12.25 GB -- still large but at least accessable
 ````
 
-## 3. How to save a large array of 0/False and 1/True (where the True values are sparse) with numpy?
-__Q.__ I have a large array of true values (the one created in question 2 and processed further), for example, of size 25000\*700\*700, which is expensive to be saved as a csv file because the required memory size (after reshaping into 2D) is soooo large and the the required time is sooooo long.
+## 3. How to save a large boolean array (where the True values are sparse) with numpy?
+__Q.__ I have a large boolean array (the one created in question 2 and processed further), for example, of size 25000\*700\*700, which is expensive to be saved as a csv file because the required memory (after reshaping into 2D) is soooo large and the the required time is sooooo long.
 
 __A.__ Save the indices of the True values (the csv file of indices occupies only 4.8 MBs in my case!)
 

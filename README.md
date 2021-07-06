@@ -16,7 +16,7 @@ for i in range(1,6):
 ## 2. How to create an array to record a huge amount of true values (True/1 and False/0)?
 __Q.__ I need to create an array of size 25000\*700\*700 to record true values; `np.zeros((25000, 700, 700))` is warned with the memory error of `Unable to allocate 91.3 GiB for an array with shape (25000, 700, 700) and data type float64`.
 
-__A.__ Change the data type to bool will save the memory significantly
+__A.__ Change the data type to `bool` will save the memory significantly
 
 ````python
 numpy.zeros((25000, 700, 700), dtype=bool)

@@ -1,4 +1,4 @@
-# "It-makes-sense" tricks for coding beginners like me
+# "Ah-it-makes-sense" tricks for coding beginners like me
 
 This is a notepad to record my (perhaps) strange coding needs and tricks that meet the needs with "ah yes, it makes sense".
 
@@ -30,7 +30,7 @@ __A.__ Save the indices of True values (it only occupies 120 bytes in my case!)
 
 ````python
 indices = np.argwhere(true_or_false_array)
-# When you need to recover the original true_or_false_array
+# When I need to recover the original true_or_false_array
 recovered_array = np.zeros((25000, 700, 700), dtype=bool)
 recovered_array[indices[:,0], indices[:,1], indices[:,2]] = True
 ````

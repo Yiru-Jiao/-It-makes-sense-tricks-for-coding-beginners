@@ -35,4 +35,13 @@ recovered_array = np.zeros((25000, 700, 700), dtype=bool)
 recovered_array[indices[:,0], indices[:,1], indices[:,2]] = True
 ````
 
+## 4. How to check if a sequence (1 times n) is in an array (m times n)?
+__Q.__ I have a sequence S of size 1×n and an array S_set of size m×n, and I need to check if S is in S_set.
+
+__A.__ Rather than comparing S with rows in S_set one by one, we can utilize logical operators offered by numpy. Step 1, we create an array consisting of m rows of S; step 2, with np.logical_not() and np.logical_xor(), we compare the new array with S_set to find out if corresponding rows are the same; step 3, if step 2 find any equal rows, S is in S_set.
+
+````python
+is_S_in_S_set = np.any(np.all(np.logical_not(np.logical_xor(np.array([S,]*S_set.shape[0]), S_set)), axis=1))
+````
+
 --to be continued--

@@ -41,7 +41,7 @@ __Q.__ I have a sequence S of size 1×n and an array S_set of size m×n, and I n
 __A.__ Rather than comparing S with rows in S_set one by one, we can utilize logical operators offered by numpy. Step 1, we create an array consisting of m rows of S; step 2, with np.equal() and np.all(), we compare the new array with S_set to find out if corresponding rows are the same; step 3, if step 2 find any equal rows, S is in S_set.
 
 ````python
-is_S_in_S_set = np.any(np.all(np.equal(np.array([S,]*S_set.shape[0]), S_set)), axis=1)
+is_S_in_S_set = np.any(np.all(np.equal(np.array([S,]*S_set.shape[0]), S_set), axis=1))
 ````
 
 --to be continued--

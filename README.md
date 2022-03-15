@@ -22,6 +22,7 @@ __A.__ Change the data type to `bool` will save the memory significantly
 numpy.zeros((25000, 700, 700), dtype=bool)
 # the memory size now is around 12.25 GB -- still large but at least accessible
 ````
+__Update:__ Try to record only the indices if the matrix will be sparse.
 
 ## 3. How to save a large boolean array (where the True values are sparse) with numpy?
 __Q.__ I have a large boolean array (the one created in question 2 and processed further), for example, of size 25000\*700\*700, which is expensive to be saved as a csv file because the required memory (after reshaping into 2D) is soooo large and the the required time is sooooo long.
@@ -44,4 +45,9 @@ __A.__ Rather than comparing S with rows in S_set one by one, we can utilize log
 is_S_in_S_set = np.any(np.all(np.equal(np.array([S,]*S_set.shape[0]), S_set), axis=1))
 ````
 
+__Update:__ Another concise way for Python lists can be
+
+````python
+is_S_in_S_set = np.any([S == x for x in S_set])
+````
 --to be continued--
